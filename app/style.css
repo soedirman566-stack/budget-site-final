@@ -1,0 +1,234 @@
+/* Hearth & Ledger — warm paper-and-ink design.
+   Cream ground, terracotta + deep-green inks, Georgia serif headings.
+   No webfonts, no images: everything is type, colour and inline SVG. */
+
+:root {
+  --paper: #faf6ef;
+  --paper-deep: #f1e9da;
+  --card: #fffdf8;
+  --ink: #2e2a24;
+  --ink-soft: #6b6257;
+  --line: #e3d9c6;
+  --terra: #b4552a;
+  --terra-dark: #96431f;
+  --green: #2f5d3a;
+  --green-soft: #e6efe7;
+  --gold: #c9a227;
+  --danger: #a83226;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+h1, h2, h3, .brand-name, .big-figure {
+  font-family: Georgia, "Times New Roman", serif;
+  color: var(--ink);
+}
+
+h2 { font-size: 26px; margin: 0 0 4px; }
+h3 { font-size: 19px; margin: 0 0 10px; }
+
+/* ---- header ---- */
+.site-header { background: var(--green); color: #f7f2e8; }
+.header-inner {
+  max-width: 1080px; margin: 0 auto; padding: 18px 20px 10px;
+  display: flex; justify-content: space-between; align-items: flex-start; gap: 16px;
+}
+.brand-name { font-size: 30px; margin: 0; color: #f7f2e8; letter-spacing: .3px; }
+.brand-sub { margin: 2px 0 0; font-size: 13px; color: #d8e2d4; }
+.currency-toggle {
+  background: transparent; color: #f7f2e8; border: 1.5px solid #cfe0cb;
+  border-radius: 999px; padding: 8px 16px; font-size: 14px; font-weight: 600;
+  cursor: pointer; white-space: nowrap; margin-top: 4px;
+}
+.currency-toggle:hover { background: rgba(255, 255, 255, .12); }
+.site-nav {
+  max-width: 1080px; margin: 0 auto; padding: 0 20px 12px;
+  display: flex; flex-wrap: wrap; gap: 4px 22px;
+}
+.site-nav a {
+  color: #e9efe6; text-decoration: none; font-weight: 600; font-size: 15px;
+  padding: 4px 2px; border-bottom: 3px solid transparent;
+}
+.site-nav a:hover { color: #fff; }
+.site-nav a.active { color: #ffd9a8; border-bottom-color: var(--gold); }
+
+/* ---- layout ---- */
+.view { max-width: 1080px; margin: 0 auto; padding: 24px 20px 8px; }
+.page-head { margin-bottom: 18px; }
+.page-head p { margin: 0; color: var(--ink-soft); max-width: 720px; }
+.site-footer {
+  max-width: 1080px; margin: 0 auto; padding: 8px 20px 32px;
+  color: var(--ink-soft); font-size: 13px;
+}
+.site-footer p { margin: 4px 0; }
+
+/* ---- summary cards ---- */
+.cards {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-bottom: 18px;
+}
+.card {
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 14px 16px; box-shadow: 0 1px 2px rgba(46, 42, 36, .05);
+}
+.card-label { margin: 0 0 2px; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); }
+.card-value { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: 26px; font-weight: 700; color: var(--ink); }
+.card-sub { margin: 2px 0 0; font-size: 13px; color: var(--ink-soft); }
+
+/* ---- panels & grids ---- */
+.panel {
+  background: var(--card); border: 1px solid var(--line); border-radius: 10px;
+  padding: 18px 20px; box-shadow: 0 1px 2px rgba(46, 42, 36, .05);
+}
+.panel-text { color: var(--ink-soft); }
+.panel-note { font-size: 13px; color: var(--ink-soft); }
+.grid-two { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+.grid-three { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 14px; }
+.budget-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+.goal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 14px; }
+.big-figure { font-size: 22px; font-weight: 700; margin: 6px 0; }
+.of-target { font-size: 15px; color: var(--ink-soft); font-weight: 400; }
+.funded-note { color: var(--green); font-weight: 600; }
+
+/* ---- charts ---- */
+.donut-wrap { display: flex; gap: 18px; align-items: center; }
+.donut { width: 200px; height: 200px; flex: none; }
+.donut-total { font-family: Georgia, serif; font-size: 21px; font-weight: 700; fill: var(--ink); }
+.donut-caption { font-size: 10.5px; fill: var(--ink-soft); }
+.legend { list-style: none; margin: 0; padding: 0; flex: 1; }
+.legend li { display: flex; align-items: center; gap: 8px; padding: 4px 0; font-size: 14px; border-bottom: 1px dashed var(--line); }
+.legend-figure { margin-left: auto; color: var(--ink-soft); font-size: 13px; white-space: nowrap; }
+.bars { width: 100%; height: auto; }
+.bar-label { font-size: 12px; fill: var(--ink-soft); }
+.chart-key { font-size: 13px; color: var(--ink-soft); margin: 6px 0 0; }
+.key-swatch { display: inline-block; width: 12px; height: 12px; border-radius: 3px; vertical-align: -1px; }
+.key-income { background: var(--green); }
+.key-spent { background: var(--terra); }
+
+/* ---- lists ---- */
+.dot { display: inline-block; width: 11px; height: 11px; border-radius: 50%; flex: none; }
+.kv-list, .bill-list, .goal-list, .expense-list, .tips-list, .notes-list { list-style: none; margin: 0; padding: 0; }
+.kv-list li, .bill-list li, .goal-list li {
+  display: flex; justify-content: space-between; gap: 10px; padding: 7px 0;
+  border-bottom: 1px dashed var(--line); font-size: 14px;
+}
+.kv-list li span:last-child, .bill-amount { font-weight: 600; white-space: nowrap; }
+.bill-due { color: var(--ink-soft); }
+.bill-row.overdue .bill-due { color: var(--danger); font-weight: 700; }
+.bill-row.paid { opacity: .65; }
+.bill-done { color: var(--green); font-weight: 700; white-space: nowrap; }
+.mini-bar {
+  flex: 1; height: 8px; background: var(--paper-deep); border-radius: 99px; overflow: hidden;
+}
+.mini-bar span { display: block; height: 100%; background: var(--green); }
+.goal-list li { align-items: center; }
+.goal-name { font-weight: 600; }
+.goal-figure { font-size: 13px; color: var(--ink-soft); white-space: nowrap; }
+.notes-list li { padding: 8px 0 8px 4px; border-bottom: 1px dashed var(--line); }
+.notes-list li:last-child { border-bottom: 0; }
+.notes { margin-bottom: 14px; }
+.tips-list li { padding: 6px 0 6px 18px; position: relative; }
+.tips-list li::before { content: "›"; position: absolute; left: 2px; color: var(--terra); font-weight: 700; }
+
+/* ---- budget cards ---- */
+.budget-head { display: flex; align-items: center; gap: 8px; }
+.budget-head h3 { margin: 0; flex: 1; }
+.budget-pct { font-weight: 700; color: var(--green); }
+.budget-pct.over { color: var(--danger); }
+.progress { height: 10px; background: var(--paper-deep); border-radius: 99px; overflow: hidden; margin: 12px 0 8px; }
+.progress span { display: block; height: 100%; border-radius: 99px; }
+.progress.big { height: 14px; }
+.progress.big span { background: var(--green); }
+
+/* ---- forms & buttons ---- */
+.btn {
+  display: inline-block; background: var(--terra); color: #fff; border: 0; border-radius: 8px;
+  padding: 9px 16px; font-size: 14px; font-weight: 600; cursor: pointer; text-decoration: none;
+}
+.btn:hover { background: var(--terra-dark); }
+.btn.small { padding: 6px 12px; font-size: 13px; }
+.btn.danger { background: #fff; color: var(--danger); border: 1.5px solid var(--danger); }
+.btn.danger:hover { background: var(--danger); color: #fff; }
+input, select {
+  font: inherit; font-size: 14px; padding: 8px 10px; border: 1.5px solid #cfc4ae;
+  border-radius: 8px; background: #fff; color: var(--ink);
+}
+input:focus, select:focus { outline: 2px solid var(--green); outline-offset: 1px; }
+label { font-size: 13px; font-weight: 600; color: var(--ink-soft); display: flex; flex-direction: column; gap: 4px; }
+.inline-form { display: flex; gap: 8px; align-items: flex-end; flex-wrap: wrap; }
+.inline-form input { width: 150px; }
+.stack-form { display: flex; flex-direction: column; gap: 10px; max-width: 340px; }
+.form-row { display: flex; gap: 10px; align-items: flex-end; flex-wrap: wrap; }
+.form-row label { flex: 1 1 140px; }
+.form-row input[type="text"] { min-width: 180px; }
+.panel-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.filter-label { flex-direction: row; align-items: center; gap: 8px; }
+
+/* ---- ledger ---- */
+.expense-list li {
+  display: grid; grid-template-columns: 64px 1fr 150px 130px 150px; gap: 10px; align-items: center;
+  padding: 9px 0; border-bottom: 1px dashed var(--line); font-size: 14px;
+}
+.exp-date { color: var(--ink-soft); }
+.exp-amount { font-weight: 700; text-align: right; white-space: nowrap; }
+.exp-actions { text-align: right; white-space: nowrap; }
+.exp-cat { display: flex; align-items: center; gap: 7px; color: var(--ink-soft); }
+.exp-edit { display: contents; }
+.exp-edit label { font-size: 12px; }
+.empty { color: var(--ink-soft); }
+.edit-expense-form {
+  display: grid; grid-column: 1 / -1; grid-template-columns: 110px 1fr 150px 130px auto; gap: 8px; align-items: end;
+}
+
+/* ---- goals ---- */
+.bill-list.full li {
+  display: grid; grid-template-columns: 1fr 170px 130px 130px; gap: 10px; align-items: center;
+}
+.bill-list.full .bill-amount { text-align: right; }
+.bill-list.full .bill-due { text-align: right; }
+.topup-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; margin-top: 10px; }
+.topup-row span { font-size: 13px; font-weight: 600; color: var(--ink-soft); }
+
+/* ---- simulator ---- */
+.simulator { margin-bottom: 14px; }
+.sim-controls { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+.sim-controls input[type="range"] { width: 100%; accent-color: var(--terra); padding: 0; border: 0; }
+.sim-results { margin-bottom: 0; }
+.sim-verdict { font-size: 17px; margin: 16px 0 0; }
+
+/* ---- phone ---- */
+@media (max-width: 820px) {
+  .brand-name { font-size: 18px; }
+  .brand-sub { font-size: 12px; }
+  .header-inner { padding: 14px 16px 8px; }
+  .site-nav { padding: 0 16px 10px; gap: 2px 14px; }
+  .site-nav a { font-size: 14px; }
+  .view { padding: 18px 14px 4px; }
+  .cards { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .card { padding: 10px 12px; }
+  .card-value { font-size: 19px; white-space: nowrap; }
+  .card-label { font-size: 11px; }
+  .grid-two, .grid-three, .budget-grid, .goal-grid { grid-template-columns: 1fr; }
+  .donut-wrap { flex-direction: column; align-items: flex-start; }
+  .donut { width: 170px; height: 170px; }
+  .legend { width: 100%; }
+  h2 { font-size: 22px; }
+  .expense-list li { grid-template-columns: 52px 1fr 110px; grid-auto-rows: auto; }
+  .exp-cat { grid-column: 2; }
+  .exp-amount { grid-column: 3; grid-row: 1; }
+  .exp-actions { grid-column: 1 / -1; text-align: left; }
+  .edit-expense-form { grid-template-columns: 1fr 1fr; }
+  .bill-list.full li { grid-template-columns: 1fr 110px; }
+  .bill-list.full .bill-due { text-align: left; }
+  .bill-list.full .bill-amount { text-align: left; }
+  .sim-controls { grid-template-columns: 1fr; }
+  .form-row label { flex: 1 1 100%; }
+}
